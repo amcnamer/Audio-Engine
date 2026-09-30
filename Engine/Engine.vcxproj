@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{ED602E5D-031C-4AF8-B6A6-4B34E0073B27}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Basics1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Engine</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>CppCoreCheckConstRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;PESSAC;WINDOWS_TARGET_PLATFORM="$(TargetPlatformVersion)";SOLUTION_DIR=R"($(SolutionDir))";TOOLS_VERSION=R"($(VCToolsVersion))";LOCAL_WORKING_DIR=R"($(LocalDebuggerWorkingDirectory))"</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Framework;$(SolutionDir)Engine\AzulDXCore;$(SolutionDir)Engine\AzulDXCore\Proto;$(ProjectDir)GameApp;$(ProjectDir)src;$(ProjectDir)src\AudioEngine;$(ProjectDir)src\Audio-Thread;$(ProjectDir)src\CircularList;$(ProjectDir)src\Handle;$(ProjectDir)src\SoundMan;$(ProjectDir)src\XAudio2Wrappers;$(ProjectDir)src\Input;$(ProjectDir)src\Game-Thread;$(ProjectDir)src\Voice;$(ProjectDir)src\Manager;$(ProjectDir)src\Wave;$(ProjectDir)src\StringEnum;$(ProjectDir)src\Command;$(ProjectDir)src\File-Thread;$(ProjectDir)src\Command\File;$(ProjectDir)src\Command\Audio\Sound;$(ProjectDir)src\Command\Internal;$(ProjectDir)src\Command\Sound;$(ProjectDir)src\Aux-Thread;$(ProjectDir)src\Command\Auxillary;$(ProjectDir)src\System\CircularList;$(ProjectDir)src\System\Handle;$(ProjectDir)src\System\Input;$(ProjectDir)src\System\Utilities;$(ProjectDir)src\Playlist;$(ProjectDir)src\Command\Playlist;$(ProjectDir)src\ASound;$(ProjectDir)src\Timer;$(ProjectDir)src\Command\Game;$(ProjectDir)src\Command\Audio\Load;$(ProjectDir)src\Command\Audio\Remove;$(ProjectDir)src\Command\Demo;$(ProjectDir)src\Command\Demo\Demo1;$(ProjectDir)src\Command\Demo\Demo2;$(ProjectDir)src\Command\Demo\Demo3;$(ProjectDir)src\Command\Demo\Demo4;$(ProjectDir)src\Command\Demo\Demo5;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningVersion>
+      </WarningVersion>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeaderOutputFile />
+      <ForcedIncludeFiles>Framework.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <EnablePREfast>false</EnablePREfast>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;winmm.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <FxCompile>
+      <ShaderModel>4.0</ShaderModel>
+    </FxCompile>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PreLinkEvent>
+      <Command>if exist "$(SolutionDIr)Azul" rmdir /S /Q "$(SolutionDir)Azul"</Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Framework\Framework.h" />
+    <ClInclude Include="GameApp\AnimTimer.h" />
+    <ClInclude Include="GameApp\Engine.h" />
+    <ClInclude Include="GameApp\File.h" />
+    <ClInclude Include="GameApp\GameApp.h" />
+    <ClInclude Include="GameApp\MathEngine.h" />
+    <ClInclude Include="src\ASound\ASound.h" />
+    <ClInclude Include="src\ASound\ASoundMan.h" />
+    <ClInclude Include="src\Audio-Thread\AudioEngine.h" />
+    <ClInclude Include="src\Audio-Thread\AudioThread.h" />
+    <ClInclude Include="src\Aux-Thread\AuxThread.h" />
+    <ClInclude Include="src\Command\Audio\Load\Audio_AsyncFileLoadCompleted_Command.h" />
+    <ClInclude Include="src\Command\Audio\Load\Audio_AsyncLoadWave_Command.h" />
+    <ClInclude Include="src\Command\Audio\Load\Audio_FileLoadCompleted_Command.h" />
+    <ClInclude Include="src\Command\Audio\Load\Audio_LoadPlaylist_Command.h" />
+    <ClInclude Include="src\Command\Audio\Remove\Audio_RemoveAllWaves_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_PanSoundLeftOT_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_PanSoundRightOT_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_SoundEnd_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_VolumeDownOT_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_VolumeUpOT_Command.h" />
+    <ClInclude Include="src\Command\Auxillary\Aux_FileCB_Command.h" />
+    <ClInclude Include="src\Command\Auxillary\Aux_Internal_RemoveAllWavesCB_Command.h" />
+    <ClInclude Include="src\Command\Auxillary\Aux_PlaylistCallBack_Command.h" />
+    <ClInclude Include="src\Command\Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_A_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_B1_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_B2_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_B_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_C1_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_C_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_D1_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_D_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_E1_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_E2_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_E3_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_E4_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_E_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_F1_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_F2_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_F3_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_F_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo1\Demo1_KillCommand.h" />
+    <ClInclude Include="src\Command\Demo\Demo2\Demo2.h" />
+    <ClInclude Include="src\Command\Demo\Demo2\Demo2_A_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo2\Demo2_B_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo2\Demo2_C_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo2\Demo2_D_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo2\Demo2_KillCommand.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_A_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_D_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_E_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_F_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_G_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_H_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_I_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_J_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_Kill_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo3\Demo3_K_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo4\Demo4.h" />
+    <ClInclude Include="src\Command\Demo\Demo4\Demo4_A_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo4\Demo4_B_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo4\Demo4_KillCommand.h" />
+    <ClInclude Include="src\Voice\GameCallBackA.h" />
+    <ClInclude Include="src\Voice\GameCallBackB.h" />
+    <ClInclude Include="src\Voice\GameCallBackC.h" />
+    <ClInclude Include="src\Voice\GameCallBackD.h" />
+    <ClInclude Include="src\Command\Demo\Demo5\Demo5.h" />
+    <ClInclude Include="src\Command\Demo\Demo5\Demo5_A_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo5\Demo5_B_Command.h" />
+    <ClInclude Include="src\Command\Demo\Demo5\Demo5_KillCommand.h" />
+    <ClInclude Include="src\Command\File\File_AsyncLoadFile_Command.h" />
+    <ClInclude Include="src\Command\File\File_LoadFile_Command.h" />
+    <ClInclude Include="src\Command\Game\Game_TransferAsyncLoadUserCallBack_Command.h" />
+    <ClInclude Include="src\Command\Internal\Internal_FileCB_Command.h" />
+    <ClInclude Include="src\Command\Internal\Internal_Playlist_CallBack.h" />
+    <ClInclude Include="src\Command\Playlist\Playlist_TwoVoice_Command.h" />
+    <ClInclude Include="src\Command\Playlist\Playlist_OneVoice_Command.h" />
+    <ClInclude Include="src\Command\Playlist\PlaylistCommand.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_CreateSound_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_PanSound_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_SetSoundVolume_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_PlaySound_Command.h" />
+    <ClInclude Include="src\Command\Audio\Sound\Audio_StopSound_Command.h" />
+    <ClInclude Include="src\Command\Audio\Load\Audio_LoadWave_Command.h" />
+    <ClInclude Include="src\File-Thread\FileThread.h" />
+    <ClInclude Include="src\Game-Thread\Audio.h" />
+    <ClInclude Include="src\Game-Thread\InputProcess.h" />
+    <ClInclude Include="src\Game-Thread\QueueMan.h" />
+    <ClInclude Include="src\Game-Thread\UserAsyncLoadCallBack.h" />
+    <ClInclude Include="src\Manager\DLink.h" />
+    <ClInclude Include="src\Manager\DLinkIterator.h" />
+    <ClInclude Include="src\Manager\DLinkMan.h" />
+    <ClInclude Include="src\Manager\Iterator.h" />
+    <ClInclude Include="src\Manager\ListBase.h" />
+    <ClInclude Include="src\Manager\ManBase.h" />
+    <ClInclude Include="src\Playlist\Playlist.h" />
+    <ClInclude Include="src\Playlist\PlaylistJukeBox.h" />
+    <ClInclude Include="src\Playlist\PlaylistMan.h" />
+    <ClInclude Include="src\System\Utilities\AnimTime.h" />
+    <ClInclude Include="src\System\Utilities\AnimTimer.h" />
+    <ClInclude Include="src\System\Utilities\StringEnum.h" />
+    <ClInclude Include="src\Timer\TimerEvent.h" />
+    <ClInclude Include="src\Timer\TimerEventMan.h" />
+    <ClInclude Include="src\Timer\TimerMan.h" />
+    <ClInclude Include="src\Voice\VoiceCallBack.h" />
+    <ClInclude Include="src\System\CircularList\CircularData.h" />
+    <ClInclude Include="src\System\CircularList\CircularIndex.h" />
+    <ClInclude Include="src\Game-Thread\Game.h" />
+    <ClInclude Include="src\System\Handle\Handle.h" />
+    <ClInclude Include="src\System\Handle\HandleMan.h" />
+    <ClInclude Include="src\System\Input\Input.h" />
+    <ClInclude Include="src\SoundMan\Sound.h" />
+    <ClInclude Include="src\SoundMan\SoundManager.h" />
+    <ClInclude Include="src\Voice\Voice.h" />
+    <ClInclude Include="src\Voice\VoiceCallBack_One.h" />
+    <ClInclude Include="src\Voice\VoiceCallBack_Stitched.h" />
+    <ClInclude Include="src\Voice\VoiceCallBack_Two.h" />
+    <ClInclude Include="src\Voice\VoiceMan.h" />
+    <ClInclude Include="src\Wave\Wave.h" />
+    <ClInclude Include="src\Wave\WaveMan.h" />
+    <ClInclude Include="src\Wave\WaveTable.h" />
+    <ClInclude Include="src\XAudio2Wrappers\XAudio2Chunk.h" />
+    <ClInclude Include="src\XAudio2Wrappers\XAudio2Endianess.h" />
+    <ClInclude Include="src\XAudio2Wrappers\XAudio2Wrapper.h" />
+    <ClInclude Include="src\XAudio2Wrappers\XAudioWrapper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Framework\__DO NOT MODIFY__" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameApp\GameApp.cpp" />
+    <ClCompile Include="GameApp\Game_ReadOnly.cpp" />
+    <ClCompile Include="src\ASound\ASound.cpp" />
+    <ClCompile Include="src\ASound\ASoundMan.cpp" />
+    <ClCompile Include="src\Audio-Thread\AudioEngine.cpp" />
+    <ClCompile Include="src\Audio-Thread\AudioThread.cpp" />
+    <ClCompile Include="src\Aux-Thread\AuxThread.cpp" />
+    <ClCompile Include="src\Command\Audio\Load\Audio_AsyncFileLoadCompleted.cpp" />
+    <ClCompile Include="src\Command\Audio\Load\Audio_AsyncLoadWave_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Load\Audio_LoadPlaylist_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Remove\Audio_RemoveAllWaves_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_PanSoundLeftOT_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_PanSoundRightOT_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_SoundEnd_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_VolumeDownOT_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_VolumeUpOT_Command.cpp" />
+    <ClCompile Include="src\Command\Auxillary\Aux_Internal_RemoveAllWavesCB_Command.cpp" />
+    <ClCompile Include="src\Command\Auxillary\Aux_PlaylistCallBack_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_A_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_B1_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_B2_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_B_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_C1_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_C_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_D1_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_D_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_E1_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_E2_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_E3_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_E4_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_E_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_F1_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_F3_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_F_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_F2_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo1\Demo1_KillCommand.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo2\Demo2.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo2\Demo2_A_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo2\Demo2_B_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo2\Demo2_C_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo2\Demo2_D_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo2\Demo2_KillCommand.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_A_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_D_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_E_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_F_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_G_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_H_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_I_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_J_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_Kill_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo3\Demo3_K_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo4\Demo4.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo4\Demo4_A_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo4\Demo4_B_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo4\Demo4_KillCommand.cpp" />
+    <ClCompile Include="src\Voice\GameCallBackA.cpp" />
+    <ClCompile Include="src\Voice\GameCallBackB.cpp" />
+    <ClCompile Include="src\Voice\GameCallBackC.cpp" />
+    <ClCompile Include="src\Voice\GameCallBackD.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo5\Demo5.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo5\Demo5_A_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo5\Demo5_B_Command.cpp" />
+    <ClCompile Include="src\Command\Demo\Demo5\Demo5_KillCommand.cpp" />
+    <ClCompile Include="src\Command\File\File_AsyncLoadFileCommand.cpp" />
+    <ClCompile Include="src\Command\Game\Game_TransferAsyncLoadUserCallBack_Command.cpp" />
+    <ClCompile Include="src\Command\Internal\Internal_Playlist_Callback.cpp" />
+    <ClCompile Include="src\Command\Playlist\Playlist_TwoVoice_Command.cpp" />
+    <ClCompile Include="src\Command\Playlist\Playlist_OneVoice_Command.cpp" />
+    <ClCompile Include="src\Command\Playlist\PlaylistCommand.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_CreateSound_Command.cpp" />
+    <ClCompile Include="src\Game-Thread\InputProcess.cpp" />
+    <ClCompile Include="src\Game-Thread\UserAsyncLoadCallBack.cpp" />
+    <ClCompile Include="src\Playlist\Playlist.cpp" />
+    <ClCompile Include="src\Playlist\PlaylistJukeBox.cpp" />
+    <ClCompile Include="src\Playlist\PlaylistMan.cpp" />
+    <ClCompile Include="src\System\CircularList\CircularData.cpp" />
+    <ClCompile Include="src\System\CircularList\CircularIndex.cpp" />
+    <ClCompile Include="src\Command\Audio\Load\Audio_FileLoadCompleted_Command.cpp" />
+    <ClCompile Include="src\Command\Auxillary\Aux_FileCB_Command.cpp" />
+    <ClCompile Include="src\Command\File\File_LoadFile_Command.cpp" />
+    <ClCompile Include="src\Command\Internal\Internal_FileCB_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_PanSound_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_SetSoundVolume_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_PlaySound_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Sound\Audio_StopSound_Command.cpp" />
+    <ClCompile Include="src\Command\Audio\Load\Audio_LoadWave_Command.cpp" />
+    <ClCompile Include="src\File-Thread\FileThread.cpp" />
+    <ClCompile Include="src\Game-Thread\Audio.cpp" />
+    <ClCompile Include="src\Game-Thread\Game.cpp" />
+    <ClCompile Include="src\Game-Thread\QueueMan.cpp" />
+    <ClCompile Include="src\System\Handle\Handle.cpp" />
+    <ClCompile Include="src\System\Handle\HandleMan.cpp" />
+    <ClCompile Include="src\System\Handle\Lock.cpp" />
+    <ClCompile Include="src\System\Handle\LockTwoInput.cpp" />
+    <ClCompile Include="src\System\Input\Input.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Manager\DLink.cpp" />
+    <ClCompile Include="src\Manager\DLinkIterator.cpp" />
+    <ClCompile Include="src\Manager\DLinkMan.cpp" />
+    <ClCompile Include="src\Manager\ManBase.cpp" />
+    <ClCompile Include="src\SoundMan\Sound.cpp" />
+    <ClCompile Include="src\SoundMan\SoundManager.cpp" />
+    <ClCompile Include="src\System\Utilities\AnimTime.cpp" />
+    <ClCompile Include="src\System\Utilities\AnimTimer.cpp" />
+    <ClCompile Include="src\System\Utilities\StringEnum.cpp" />
+    <ClCompile Include="src\Timer\TimerEvent.cpp" />
+    <ClCompile Include="src\Timer\TimerEventMan.cpp" />
+    <ClCompile Include="src\Timer\TimerMan.cpp" />
+    <ClCompile Include="src\Voice\Voice.cpp" />
+    <ClCompile Include="src\Voice\VoiceCallBack.cpp" />
+    <ClCompile Include="src\Voice\VoiceCallBack_One.cpp" />
+    <ClCompile Include="src\Voice\VoiceCallBack_Stitched.cpp" />
+    <ClCompile Include="src\Voice\VoiceCallBack_Two.cpp" />
+    <ClCompile Include="src\Voice\VoiceMan.cpp" />
+    <ClCompile Include="src\Wave\Wave.cpp" />
+    <ClCompile Include="src\Wave\WaveMan.cpp" />
+    <ClCompile Include="src\Wave\WaveTable.cpp" />
+    <ClCompile Include="src\XAudio2Wrappers\XAudio2Chunk.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="AzulDXCore\lib\Debug\AzulDXCore_X86Debug.lib" />
+    <Library Include="AzulDXCore\lib\Debug\DirectXTex_DebugX86.lib" />
+    <Library Include="AzulDXCore\lib\Debug\File_X86Debug.lib" />
+    <Library Include="AzulDXCore\lib\Debug\Manager_X86Debug.lib" />
+    <Library Include="AzulDXCore\lib\Debug\Math_X86Debug.lib" />
+    <Library Include="AzulDXCore\lib\Debug\PCSTree_X86Debug.lib" />
+    <Library Include="AzulDXCore\lib\Debug\ProtoBuf_X86Debug.lib" />
+    <Library Include="AzulDXCore\lib\Debug\Time_X86Debug.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
